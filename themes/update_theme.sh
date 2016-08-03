@@ -1,10 +1,8 @@
 #!/bin/bash
 
 update_theme_repo() { 
-	sudo -H -u edxapp bash
-	cd $1
-	git pull
-	exit
+	cd /edx/app/themes/$1 && \
+		sudo -u edxapp git pull
 }
 
 compile_theme() {
@@ -24,7 +22,7 @@ restart_server() {
 if [ "$#" -ne 1 ]; then
 	echo "Usage"
 	echo " "
-	echo "            sudo update_theme.sh /edx/app/themes/THEME_REPO_NAME {lms|cms}"
+	echo "            sudo update_theme.sh THEME_REPO_DIR_NAME {lms|cms}"
 	echo " "
 else
 	update_theme_repo
