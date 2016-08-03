@@ -4,7 +4,7 @@ THEME_REPO="/edx/app/themes/"
 
 update_theme_repo() {
 
-	cd $THEME_REPO$1 && \
+	cd $THEME_REPO$1/ && \
 		sudo -u edxapp git pull
 }
 
