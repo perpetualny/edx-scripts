@@ -19,7 +19,7 @@ restart_server() {
 }
 
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
 	echo "Usage"
 	echo " "
 	echo "            sudo update_theme.sh THEME_REPO_DIR_NAME {lms|cms}"
