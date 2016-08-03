@@ -1,20 +1,17 @@
 #!/bin/bash
 
-THEME_REPO="/edx/app/themes/"
+THEME_REPO="/edx/app/themes/"$1/
 
 update_theme_repo() {
 
-	cd $THEME_REPO$1/ && \
+	cd $THEME_REPO && \
 		sudo -u edxapp git pull
 }
 
 compile_theme() {
-	sudo -H -u edxapp bash
-	cd "/edx/app/edxapp"
-	source edxapp_env
-	cd edx-platform
-	paver update_assets $2 --settings=aws
-	exit
+	cd /edx/app/edxapp/edx-platform
+	source /edx/app/edxapp/edxapp_env
+	sudo -E -u edxapp env "PATH=$PATH" /edx/app/edxapp/venvs/edxapp/bin/paver update_assets $2 --settings=aws
 }
 
 restart_server() { 
