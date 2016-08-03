@@ -3,7 +3,6 @@
 THEME_REPO="/edx/app/themes/"$1/
 
 update_theme_repo() {
-
 	cd $THEME_REPO && \
 		sudo -u edxapp git pull
 }
@@ -20,13 +19,17 @@ restart_server() {
 
 
 if [ "$#" -ne 2 ]; then
+	echo " "
 	echo "Usage"
 	echo " "
-	echo "            sudo update_theme.sh THEME_REPO_DIR_NAME {lms|cms}"
+	echo "	sudo update_theme.sh THEME_REPO_DIR_NAME {lms|cms}"
 	echo " "
 else
+	echo "Updating "$1" repo ..."
 	update_theme_repo
+	echo "compiling "$1" repo ..."
 	compile_theme
+	echo "Restarting the server ..."
 	restart_server
 fi
 
