@@ -47,6 +47,9 @@ cd /var/tmp
 git clone https://github.com/edx/configuration
 cd configuration
 git checkout $CONFIG_VER
+# optional.txt error de9dab6
+git cherry-pick de9dab6
+
 
 # Install ansible requirements 
 cd /var/tmp/configuration
