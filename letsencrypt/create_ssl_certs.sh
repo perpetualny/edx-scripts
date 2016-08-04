@@ -18,7 +18,7 @@ done
 echo $TMPCMD
 
 # Fetch the certificates
-sudo ./certbot-auto certonly $TMPCMD
+sudo ./certbot-auto  $TMPCMD
 
 # Creating dir in /etc/nginx
 sudo mkdir -p /etc/nginx/certs
