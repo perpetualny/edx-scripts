@@ -21,7 +21,7 @@ sudo apt-get install -y python-software-properties
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 
 # Pre-requisites
-sudo apt-get install -y build-essential software-properties-common python-software-properties curl git-core libxml2-dev libxslt1-dev python-pip python-apt python-dev libxmlsec1-dev libfreetype6-dev swig gcc-4.8 g++-4.8
+sudo apt-get install -y build-essential software-properties-common python-software-properties curl git-core libxml2-dev libxslt1-dev python-pip python-apt python-dev python-scipy libxmlsec1-dev libfreetype6-dev swig gcc-4.8 g++-4.8
 sudo pip install --upgrade pip==7.1.2
 sudo pip install --upgrade setuptools==18.3.2
 sudo -H pip install --upgrade virtualenv==13.1.2
